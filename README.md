@@ -1,1 +1,1 @@
-in login edit branch changing some techniques and checking if it working or not
+This is e-commerce application testing project.The framework is pytest and language used to write code is python
