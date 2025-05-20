@@ -15,20 +15,12 @@ class Test_005_SearchCustomerBy_name:
     Password = ReadConfig.getpassword()
     logger = logGen.logger()
 
-    def test_login(self,setup):
+    def test_login(self,setup,test_login):
         self.logger.info('*** Login test started ***')
         self.driver= setup
-        lp=Login(self.driver)
-        self.driver.get(self.baseurl)
-        lp.setusername(self.Username)
-        lp.setpassword(self.Password)
-        lp.clicklogin()
-        act_title=self.driver.title
-        if act_title=="Dashboard / nopCommerce administration":
-            assert True
-        else:
-            assert False
-            self.logger.info('**** login test completed ****')
+      
+       
+            
             self.addcust = AddNewCustomer(self.driver)
             self.addcust.clickonCustomermenu()
             self.addcust.clickonCustomersubmenu()
