@@ -75,3 +75,22 @@ def configure_logging():
 @pytest.fixture(scope="function")
 def logger(configure_logging):
     return configure_logging
+
+@pytest.fixture()
+    def test_login(self,setup):
+        self.driver=setup
+
+        baseurl=ReadConfig.getApplicationurl()
+        Username=ReadConfig.getusername()
+        Password=ReadConfig.getpassword()
+
+        self.driver.get(self.baseurl)
+        self.lp=Login(self.driver)
+        self.lp.setusername(self.Username)
+        self.lp.setpassword(self.Password)
+        self.lp.clicklogin()
+        act_title= "Dashboard / nopCommerce administration"
+        if act_title==self.driver.title:
+            print('Login Successful')
+        else:
+            print('login unsuccessful')
