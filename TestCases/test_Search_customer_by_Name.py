@@ -19,7 +19,6 @@ class Test_005_SearchCustomerBy_name:
         self.logger.info('*** Login test started ***')
         self.driver= setup
       
-       
             
             self.addcust = AddNewCustomer(self.driver)
             self.addcust.clickonCustomermenu()
