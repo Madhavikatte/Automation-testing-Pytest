@@ -76,7 +76,7 @@ def configure_logging():
 def logger(configure_logging):
     return configure_logging
 
-@pytest.fixture()
+@pytest.fixture(scope=Autouse)
     def test_login(self,setup):
         self.driver=setup
 
